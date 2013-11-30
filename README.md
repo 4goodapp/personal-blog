@@ -33,7 +33,7 @@
  I'd like some contributers if anyone is interested. 
  Anyone is free to use it no matter the purpose.
 
-![Alt text](http://raw.github.com.com/albdusty/personal-blog/tree/master/public/images/screenshot.png)
+![Alt text](https://github.com/albdusty/personal-blog/blob/master/public/images/screenshot.png)
 
 
 
