@@ -1,0 +1,113 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  	<link rel="stylesheet" href="/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/chosen/chosen.min.css">
+    <script type="text/javascript" src="/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/livestamp/livestamp.min.js"></script>
+    <script type="text/javascript" src="/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="/chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="/jquery-ui/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="/jquery-ui/jquery-ui-timepicker-addon.js"></script>
+  	<title>Personal Blog</title>
+</head>
+<body>
+</body>
+
+
+
+<template name="masterPage">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/generic-logo-small.png" height="31px" width="170px"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="home active" id="home"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+            <li class="about"><a href="/about" id="about"><i class="fa fa-info-circle"></i> About</a></li>
+            <li class="contact"><a href="/contact" id="contact"><i class="fa fa-envelope"></i> Contact</a></li>
+            {{#if currentUser}}
+                <li class="dropdown">
+                  {{> notifications}}
+                </li>
+                <li class="dropdown admin">
+                      <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i> Admin 
+                        <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="/adminNewPost" id="adminNewPost"><i class="fa fa-plus" /> New Post</a>
+                        <li><a href="/adminPosts" id="adminPosts"><i class="fa fa-pencil" /> Edit Posts</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/adminComments" id="adminComments"><i class="fa fa-comment" /> Comments</a></li>
+                        <li><a href="/adminMessages" id="adminMessages"><i class="fa fa-envelope" /> Messages</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/adminAccountSettings" id="adminAccountSettings">Account Settings</a></li>
+                      </ul>
+                </li>
+              <li>&nbsp;</li>
+              <li><a href="" id="logout"><i class="fa fa-sign-out"></i> Sign out</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          {{> errors}}
+          {{yield}}
+
+        </div>
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+          <div class="list-group">
+            <a href="{{pathFor 'postsList'}}" class="sidebar list-group-item"><span class="sidebar badge">{{postsCount}}</span><i class="fa fa-archive fa-lg"></i> &nbsp;&nbsp;Archive</a>
+      			<a href="http://twitter.com" target="_blank" class="sidebar list-group-item">
+      			<i class="fa fa-twitter-square fa-lg"></i> &nbsp;&nbsp;Twitter</a>
+            <a href="http://facebook.com" class="sidebar list-group-item">
+            <i class="fa fa-facebook-square fa-lg"></i> &nbsp;&nbsp;Facebook</a>
+          </div>
+
+          <div class="well">
+            <h4>Search Blog</h4>
+            <div class="input-group">
+              <div class="input-group margin-bottom-sm" style="margin-top: 8px;">
+        			  <input class="form-control navbar-right" type="text" style="width: 185px" placeholder="Search">
+        			  <span class="input-group-addon"><i class="fa fa-search"></i></span>
+    		  	  </div>
+            </div>
+          </div>
+
+          {{>sidebarCategories}}
+
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>
+        {{#if currentUser}}
+          ©
+        {{else}}
+          <a href="/login" class="no-link">©</a>
+        {{/if}} 
+          Personal Blog 2013</p>
+      </footer>
+    </div>
+</template>

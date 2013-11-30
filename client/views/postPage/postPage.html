@@ -1,0 +1,42 @@
+<template name="postPage">
+ 	<div class="col-8 postPage">
+    {{#with currentPost}}
+      <!-- the blog post -->
+      <h1>{{title}}</h1>
+        <p class="lead">by <a href="/about">{{author}}</a></p>
+        <hr>
+        <p>
+          <span class="glyphicon glyphicon-time"></span> Posted on {{submittedText}} &nbsp;
+          {{#each currentPostCategories}}
+            <a href="/category/{{name}}"><span class="label label-blog"><i class="fa fa-tag"></i> {{name}}</span></a>
+          {{/each}}
+          {{#if commentsCount}}
+            <a href="" id="commentsCount" title="{{commentsCount}} comments"><span class="label label-info">{{commentsCount}} <i class="fa fa-comments"></i></span></a>
+          {{/if}}
+        </p>
+        <hr>
+        {{{content}}}
+        
+        <hr>
+
+        <!-- the comment box -->
+        {{>submitComment}}
+        
+        {{#if commentsCount}}
+        <hr>
+        {{/if}}
+
+        <!-- the comments -->
+        <a id="comments" name="comments"></a>
+        {{#each comments}}
+          {{>comment}}
+        {{/each}}
+        {{#if isNotLastPage}}
+        <a class="btn btn-default load-more-button pull-left previous-page" href=""><i class="fa fa-chevron-left"/> Previous</a>
+        {{/if}}
+        {{#if isNotFirstPage}}
+        <a class="btn btn-default load-more-button pull-right next-page" href="">Next <i class="fa fa-chevron-right"/></a>
+        {{/if}}
+      {{/with}}
+  </div>
+</template>

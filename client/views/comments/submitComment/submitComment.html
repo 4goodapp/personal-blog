@@ -1,0 +1,23 @@
+<template name="submitComment">
+	<div class="well">
+        <h4>Leave a comment:</h4>
+        <form role="form">
+          <div class="form-group">
+          	<div class="input-group margin-bottom-sm">
+          		<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+      			  <input class="form-control col-lg-10" id="author" name="author" style="width: 250px;" type="text" placeholder="Name">
+        	 </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group margin-bottom-sm">
+              <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+              <input class="form-control col-lg-10" id="email" name="email" style="width: 250px;" type="text" placeholder="Email">
+           </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="body" name="body" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default" placeholder="Submit">Submit</button>
+        </form>
+      </div>
+</template>

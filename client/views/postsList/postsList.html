@@ -1,0 +1,20 @@
+<template name="postsList">
+  <div class="jumbotron">
+    <h1>Hello!</h1>
+    <p>This is a short presentation of the blog. Write here a little about yourself (name, what you do, expertise, etc). Welcome the reader.</p>
+  </div>  
+  <div class="row">
+    {{#each posts}}
+        {{> postItem}}
+    {{/each}}
+  </div> 
+  <br/> 
+  <div>
+      {{#if isNotLastPage}}
+      <a class="btn btn-default load-more-button pull-left previous-page" href=""><i class="fa fa-chevron-left"/> Previous</a>
+      {{/if}}
+      {{#if isNotFirstPage}}
+      <a class="btn btn-default load-more-button pull-right next-page" href="">Next <i class="fa fa-chevron-right"/></a>
+      {{/if}}
+  </div>
+</template>

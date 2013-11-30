@@ -1,0 +1,21 @@
+<template name="sidebarCategories">
+	<div class="well">
+    <h4>Popular Blog Categories</h4>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled">
+            {{#each firstColumn}}
+            <li><a href="/category/{{name}}"><span class="label label-blog">{{name}}</span></a></li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul class="list-unstyled">
+            {{#each secondColumn}}
+            <li><a href="/category/{{name}}"><span class="label label-blog">{{name}}</span></a></li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+</template>

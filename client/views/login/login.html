@@ -1,0 +1,32 @@
+ <template name="login">
+  <div class="well col-lg-offset-4" style="width: 350px;margin-top:30px;" >
+      <form class="bs-example form-horizontal" id="login-form">
+        <fieldset>
+          <legend>Please sign in</legend>
+          <div class="form-group" style="padding-left: 10px;padding-right: 10px;">
+          	<div class="input-group margin-bottom-sm">
+          		<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+      			<input class="form-control col-lg-10" id="username" type="text" placeholder="Username">
+        	</div>
+          </div>
+          <div class="form-group" style="padding-left: 10px;padding-right: 10px;">
+          	<div class="input-group">
+	          <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+	          <input class="form-control" type="password" id="password" placeholder="Password">
+	        </div>
+              <!-- <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+          	</div> -->
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-3">            
+              <button type="submit" class="btn btn-default" id="btn-login">Login</button>
+              <button class="btn btn-primary btn-cancel load-more-button" id="btn-cancel">Cancel</button>  
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+</template>

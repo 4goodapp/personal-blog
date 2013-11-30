@@ -1,0 +1,16 @@
+<template name="category">
+	<div class="row">
+    {{#each postsInCategory}}
+        {{> postItem}}
+    {{/each}} 
+  </div>   
+  <br/>
+  <div>
+    {{#if isNotLastPage}}
+	<a class="btn btn-default load-more-button pull-left previous-page" href=""><i class="fa fa-chevron-left"/> Previous</a>
+	{{/if}}
+	{{#if isNotFirstPage}}
+	<a class="btn btn-default load-more-button pull-right next-page" href="">Next <i class="fa fa-chevron-right"/></a>
+	{{/if}}
+  </div>
+</template>

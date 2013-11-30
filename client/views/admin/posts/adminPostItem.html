@@ -1,0 +1,27 @@
+<template name="adminPostItem">
+	<div class="admin-post">
+		<div class="well">
+			<h4>{{title}}<small> by {{author}} on {{submittedText}}</small></h4>
+			<p>
+				{{{shortContent}}}
+			</p>
+			<p>
+				<a href="{{pathFor 'adminEditPost'}}" title="Edit post">
+					<span class="label label-warning">
+						Edit
+					</span>
+				</a> 
+				&nbsp;
+				{{#if commentsCount}}
+					<a href="" id="commentsCount" title="{{commentsCount}} comments"><span class="label label-info">{{commentsCount}} <i class="fa fa-comments"></i></span></a>
+	          	{{/if}}
+				<a href="" title="Delete post" class="pull-right delete-post">
+					<span class="label label-danger">
+						Delete
+					</span>
+				</a>
+
+			</p>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,18 @@
+<template name="comment">
+	<div class="well">
+	<h4>
+        <span class="author">{{author}}</span>
+        <small><span class="date">on {{submittedText}}</span></small>
+	</h4>
+	<p>{{body}}</p>
+	{{#if currentUser}}
+		<div class="pull-right">
+			<a href="" title="Delete comment" class="delete-comment">
+				<span class="label label-danger">
+					Delete
+				</span>
+			</a>
+		</div>
+		<br/>
+	{{/if}}
+</template>

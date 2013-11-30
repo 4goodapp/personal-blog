@@ -1,0 +1,59 @@
+<template name="adminNewPost">
+	<div class="row">
+		<div class="well">
+          <div class="bs-example form-horizontal">
+              {{#constant}}
+              <legend>Create New Post</legend>
+              <div class="form-group">
+                <label for="title" class="col-lg-2 control-label">Title</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="title" placeholder="Title">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="title" class="col-lg-2 control-label">Date</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="date" placeholder="Publish Date">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="author" class="col-lg-2 control-label">Author</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" disabled value="{{author}}" id="author" placeholder="Author">
+              	</div>
+              </div>
+              <div class="form-group">
+                <label for="content" class="col-lg-2 control-label">Categories</label>
+                <div class="col-lg-10">
+					<select id="ddlCategories" data-placeholder="Choose a category" multiple class="chosen-select">>
+						{{#each categories}}
+							<option value="{{_id}}">{{name}}</option>
+						{{/each}}
+					</select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="excerpt" class="col-lg-2 control-label">Excerpt</label>
+                <div class="col-lg-10">
+                  <textarea class="form-control" rows="3" id="excerpt"></textarea>
+                  <span class="help-block">This is the introductary text that appears on the front page. It should be a small part of the actual post content. It's role is to show what the post is about.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="content" class="col-lg-2 control-label">Content</label>
+                <div class="col-lg-10">
+                  <textarea class="form-control" rows="3" id="content"></textarea>
+                  <span class="help-block">This is the complete post content.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                	<button id="btnSubmit" class="btn btn-default">Submit</button> 
+                    <button id="btnCancel" class="btn btn-cancel">Cancel</button> 
+                </div>
+              </div>
+              {{/constant}}
+          </div>
+        </div>
+	</div>
+</template>

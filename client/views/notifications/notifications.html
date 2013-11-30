@@ -1,0 +1,38 @@
+<template name="notifications">
+  <a class="dropdown-toggle" style="cursor:pointer;" data-toggle="dropdown">
+     
+    {{#if notificationCount}}
+      <span class="badge badge-inverse">{{notificationCount}}</span>
+      {{else}}
+      <i class="fa fa-inbox"/>
+    {{/if}}
+    <b class="caret"></b>
+  </a>
+  
+    {{#if notificationCount}}
+      <ul class="notification dropdown-menu">
+        {{#each notifications}}
+          {{> notification}}
+        {{/each}}
+      </ul>
+    {{else}}
+      <ul class="notification dropdown-menu" style="min-width: 122px; text-align: center;">
+        <li><span>No notifications</span></li>
+      </ul>
+    {{/if}}
+  </template>
+
+<template name="notification">
+  <li>
+    {{#if isComment}}
+    <a href="/post/{{relatedItemId}}">
+       <i class="fa fa-comment"></i> <strong>{{author}}</strong> commented on your post <span class="time-ago" data-livestamp="{{unixTime}}"></span>
+    </a>
+    {{/if}}
+    {{#if isMessage}}
+      <a href="/message/{{relatedItemId}}">
+       <i class="fa fa-envelope"></i> <strong>{{author}}</strong> sent you a message <span class="time-ago" data-livestamp="{{unixTime}}"></span>
+      </a>
+    {{/if}}
+  </li>
+</template>
