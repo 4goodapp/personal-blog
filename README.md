@@ -13,7 +13,7 @@
 
 
 ##### Features:
-# 1. List of posts (paginated, 6 per page).
+ 1. List of posts (paginated, 6 per page).
  2. Post page (with paginated comments, 10 per page).
  3. Posts in categories (tags): posts can be inserted in categories and posts can be filtered by a category.
  4. About section.
@@ -33,7 +33,7 @@
  I'd like some contributers if anyone is interested. 
  Anyone is free to use it no matter the purpose.
 
-![Alt text](https://raw.github.com.com/albdusty/personal-blog/tree/master/public/images/screenshot.png)
+![Alt text](http://raw.github.com.com/albdusty/personal-blog/tree/master/public/images/screenshot.png)
 
 
 
